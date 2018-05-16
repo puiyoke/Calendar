@@ -41,7 +41,7 @@ https://web.archive.org/web/20160531044930/http://blog.crowdint.com/2014/02/18/f
 3. application.js<br>
 //= require moment <br>
 //= require fullcalendar
-<!--
+```
 $(document).ready(function() {
 
     // page is now ready, initialize the calendar...
@@ -51,33 +51,33 @@ $(document).ready(function() {
     });
 
 });
--->
+```
 
 4. application.html.erb<br>
 insert above all javascript<br>
-<!--
+```
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
--->
+```
 
 5. ...html.erb (to display calendar)<br>
-<!--
+```
 <div id="calendar"></div>
--->
+```
 
 6. app/views/(folder name)/(page name).json.builder<br>
 -replace below according to table & column name<br>
-<!--
+```
 json.array!(@events) do |event|
   json.extract! event, :id, :title, :description
   json.start event.start_time
   json.end event.end_time
   json.url event_url(event, format: :html)
 end
--->
+```
 
 7. ...html.erb (to display calendar)<br>
 -these codes above calendar to add, edit, delete event (change path names accordingly)<br>
-<!--
+```
 <h1>Events</h1>
 
 <table>
@@ -109,4 +109,4 @@ end
 <br>
 
 <%= link_to 'New Event', new_event_path %>
--->
+```
